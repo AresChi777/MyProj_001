@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { CircleUserRound } from 'lucide-react'
 import { toast } from 'sonner'
 
 import { logout } from '@/services/auth'
@@ -12,6 +11,7 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/base/dropdown-menu'
 
@@ -69,26 +69,18 @@ export const Header = () => {
               <DropdownMenuGroup>
                 <DropdownMenuItem onClick={() => router.push('/profile')}>{'Profile'}</DropdownMenuItem>
               </DropdownMenuGroup>
+              <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem onClick={onLogout}>{'Logout'}</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         ) : (
-          <DropdownMenu key={'login'}>
-            <DropdownMenuTrigger asChild={true}>
-              <Avatar>
-                <AvatarFallback>
-                  <CircleUserRound className={'size-full text-gray-800'} />
-                </AvatarFallback>
-              </Avatar>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align={'end'}>
-              <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => router.push('/login')}>{'Login'}</DropdownMenuItem>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Button asChild={true}>
+            <Link href={'/login'}>
+              <span className={'capitalize'}>{'Login'}</span>
+            </Link>
+          </Button>
         )}
       </nav>
     </header>
