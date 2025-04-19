@@ -3,6 +3,7 @@
 ## Reference
 
 - [雪道・Snowlife](https://www.hokkaidosnowlife.com/)
+- [約定式提交](https://www.conventionalcommits.org/zh-hant/v1.0.0/)
 
 ## Optional Features
 
