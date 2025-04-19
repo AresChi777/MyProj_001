@@ -15,7 +15,12 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
     if (!isHydrated) throw new Error('Hydrating')
     console.log('PublicLayout: Ready')
     return (
-      <div className={cn('flex min-h-screen flex-col items-stretch', '[&>main]:container [&>main]:mx-auto')}>
+      <div
+        className={cn(
+          'flex min-h-screen flex-col items-stretch',
+          '[&>main]:container [&>main]:mx-auto [&>main]:basis-[85vh]'
+        )}
+      >
         <Header />
         {children}
         <Footer />
@@ -26,7 +31,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
     return (
       <div className={'flex min-h-screen flex-col items-stretch'}>
         <Header />
-        <main className={'flex flex-1 flex-col items-center justify-center'}>
+        <main className={'flex flex-1 basis-[85vh] flex-col items-center justify-center'}>
           <LoaderCircle className={'size-8 animate-spin'} />
         </main>
         <Footer />

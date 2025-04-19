@@ -3,7 +3,6 @@
 import { useEffect, type ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 import { LoaderCircle } from 'lucide-react'
-import { toast } from 'sonner'
 
 import { cn } from '@/utils/cn'
 import { useAuthStore } from '@/store/auth'
@@ -16,13 +15,7 @@ export default function GuestLayout({ children }: { children: ReactNode }) {
   const user = useAuthStore((state) => state.user)
 
   useEffect(() => {
-    if (isHydrated && !!user) {
-      router.replace('/')
-      toast('Failed to load page', {
-        description: 'Already logged in, Redirecting to home page.',
-        action: { label: 'OK', onClick: () => toast.dismiss() }
-      })
-    }
+    if (isHydrated && !!user) router.replace('/')
   }, [isHydrated, user, router])
 
   try {
@@ -30,7 +23,12 @@ export default function GuestLayout({ children }: { children: ReactNode }) {
     if (!!user) throw new Error('Already logged in')
     console.log('GuestLayout: Ready')
     return (
-      <div className={cn('flex min-h-screen flex-col items-stretch', '[&>main]:container [&>main]:mx-auto')}>
+      <div
+        className={cn(
+          'flex min-h-screen flex-col items-stretch',
+          '[&>main]:container [&>main]:mx-auto [&>main]:basis-[85vh]'
+        )}
+      >
         <Header />
         {children}
         <Footer />
@@ -41,7 +39,7 @@ export default function GuestLayout({ children }: { children: ReactNode }) {
     return (
       <div className={'flex min-h-screen flex-col items-stretch'}>
         <Header />
-        <main className={'flex flex-1 flex-col items-center justify-center'}>
+        <main className={'flex flex-1 basis-[85vh] flex-col items-center justify-center'}>
           <LoaderCircle className={'size-8 animate-spin'} />
         </main>
         <Footer />

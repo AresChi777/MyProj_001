@@ -1,27 +1,16 @@
 'use client'
 
-import Link from 'next/link'
-
-import { Button } from '@/components/base/button'
+import { useAuthStore } from '@/store/auth'
 
 export default function ProfilePage() {
+  const user = useAuthStore((state) => state.user)
+
   return (
     <main className={'flex flex-1 flex-col gap-y-4 p-4'}>
-      <span>{'Profile'}</span>
-      <div className={'flex gap-x-4'}>
-        {['/', 'login', 'profile'].map((path) => (
-          <Button key={path} asChild={true}>
-            <Link href={path}>
-              <span>{`Go to ${path}`}</span>
-            </Link>
-          </Button>
-        ))}
+      <div className={'flex flex-col gap-y-2 rounded bg-gray-900 p-4 text-white'}>
+        <h1 className={'font-mono text-xl font-bold'}>{'Profile'}</h1>
+        <span className={'font-mono whitespace-pre'}>{JSON.stringify(user, null, 2)}</span>
       </div>
-      {Array.from({ length: 100 }, (_, i) => (
-        <div key={i} className={'h-12 rounded bg-blue-200 p-4'}>
-          <span>{`Item ${i + 1}`}</span>
-        </div>
-      ))}
     </main>
   )
 }

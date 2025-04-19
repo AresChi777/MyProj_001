@@ -3,8 +3,10 @@ import { createJSONStorage, persist } from 'zustand/middleware'
 
 export type User = {
   id: string
+  username: string
   email: string
   name: string
+  image?: string
 }
 
 interface AuthState {
