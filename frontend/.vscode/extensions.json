@@ -8,6 +8,7 @@
     "dbaeumer.vscode-eslint",
     "streetsidesoftware.code-spell-checker",
     "wix.vscode-import-cost",
-    "jock.svg"
+    "jock.svg",
+    "mhutchie.git-graph"
   ]
 }
