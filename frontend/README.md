@@ -15,3 +15,35 @@
 - 其他小檔案：
   - .ts結尾的檔案是type script的檔案，這些檔案跟.json的檔案是一樣功能的
     放著就好沒差
+
+## Routes Overview
+
+Here are the main routes available in the application:
+
+- `/`
+  - `/(guest)`
+    - `/login`
+    - `/register`
+    - `/forgot-password`
+  - `/(private)`
+    - `/profile`
+    - `/wishlist`
+    - `/order`
+    - `/coupon`
+    - `/groups-log`
+    - `/shopping-cart`
+  - `/(public)`
+    - `/products`
+      - `/[productId]`
+    - `/teachers`
+      - `/[teacherId]`
+    - `/courses`
+      - `/[courseId]`
+        - `/sign-up`
+    - `/groups`
+      - `/create`
+      - `/[groupId]`
+        - `/join`
+        - `/edit`
+        - `/rating`
+        - `/chat`
