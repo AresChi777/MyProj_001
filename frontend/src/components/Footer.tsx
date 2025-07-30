@@ -4,6 +4,7 @@ export const Footer = () => {
       <nav className={'container mx-auto flex h-full items-center gap-x-4 px-4'}>
         <span className={'text-xl font-bold tracking-tighter text-gray-800'}>{'Mock footer'}</span>
       </nav>
+      <div></div>
     </header>
   )
 }
