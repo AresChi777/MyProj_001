@@ -5,9 +5,9 @@ export const Footer = () => {
         <span className={'text-xl font-bold tracking-tighter text-gray-800'}>{'Mock footer'}</span>
       </nav>
       <div>
-        <p className={'text-center text-sm text-gray-600'}>
-          {'© 2023 DaiskiTry. All rights reserved.'}
-        </p>
+        <p className={'text-center text-sm text-gray-600'}>{'© 2023 DaiskiTry. All rights reserved.'}</p>
+        <p className={'text-center text-sm text-gray-600'}>{'Made with ❤️ by DaiskiTry Team'}</p>
+        
       </div>
     </header>
   )
