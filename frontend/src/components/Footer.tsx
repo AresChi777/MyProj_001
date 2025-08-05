@@ -7,7 +7,7 @@ export const Footer = () => {
       <div>
         <p className={'text-center text-sm text-gray-600'}>{'© 2023 DaiskiTry. All rights reserved.'}</p>
         <p className={'text-center text-sm text-gray-600'}>{'Made with ❤️ by DaiskiTry Team'}</p>
-        
+        <p className={'text-center text-sm text-gray-600'}>{'Made with ❤️ by DaiskiTry Team'}</p>
       </div>
     </header>
   )
